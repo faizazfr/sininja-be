@@ -1,0 +1,62 @@
+GET http://localhost:5000/users
+
+
+###
+GET http://localhost:5000/users/1
+
+###
+POST http://localhost:5000/users
+Content-Type: application/json
+
+{
+    "nama": "Samsu",
+    "produk": "Celana",
+    "tujuan": "Semarang",
+    "tarif": "Rp. 30.000"
+}
+
+###
+PATCH  http://localhost:5000/users/5
+Content-Type: application/json
+
+{
+    "nama": "Samsung",
+    "produk": "Laptop",
+    "tujuan": "Solo",
+    "tarif": "Rp. 200.000"
+}
+
+###
+DELETE   http://localhost:5000/users/4
+
+###
+GET  http://localhost:5000/users?search_query=samsung&page=0&limit=10
+
+###
+GET http://localhost:5000/auth
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsIm5hbWEiOiJhZG1pbiIsImVtYWlsIjoiYWRtaW5AZ21haWwuY29tIiwiaWF0IjoxNjYyMzk1NzU2LCJleHAiOjE2NjIzOTU3NzZ9.caV7cZRi0QExtrKd_4pdyVKbtQqrn6vsnTUR3yVcMM4
+###
+POST http://localhost:5000/auth
+Content-Type: application/json
+
+{
+    "nama": "admin",
+    "email": "admin@gmail.com",
+    "password": "123",
+    "confPassword": "123"
+}
+
+###
+POST http://localhost:5000/login
+Content-Type: application/json
+
+{
+    "email" : "admin@gmail.com",
+    "password" : "123"
+}
+
+###
+GET http://localhost:5000/token
+
+###
+DELETE http://localhost:5000/logout
